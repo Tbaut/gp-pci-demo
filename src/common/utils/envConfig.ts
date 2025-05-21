@@ -5,16 +5,13 @@ dotenv.config();
 
 const envSchema = z.object({
 	NODE_ENV: z.enum(["development", "production", "test"]).default("production"),
-
 	HOST: z.string().min(1).default("localhost"),
-
 	PORT: z.coerce.number().int().positive().default(8080),
-
 	CORS_ORIGIN: z.string().url().default("http://localhost:8080"),
-
-	COMMON_RATE_LIMIT_MAX_REQUESTS: z.coerce.number().int().positive().default(1000),
-
-	COMMON_RATE_LIMIT_WINDOW_MS: z.coerce.number().int().positive().default(1000),
+	API_KEY: z.string().min(1).default(""),
+	CLIENT_CERT: z.string().min(1).default(""),
+	CLIENT_KEY: z.string().min(1).default(""),
+	GNOSIS_PCI_API_URL: z.string().url().default("https://api-pci.stg.gnosispay.com"),
 });
 
 const parsedEnv = envSchema.safeParse(process.env);
