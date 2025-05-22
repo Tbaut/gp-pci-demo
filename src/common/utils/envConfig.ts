@@ -10,7 +10,7 @@ const envSchema = z.object({
 	CORS_ORIGIN: z.string().url().default("http://localhost:8080"),
 	CLIENT_CERT: z.string().min(1).default(""),
 	CLIENT_KEY: z.string().min(1).default(""),
-	GNOSIS_PCI_API_URL: z.string().url().default("https://api-pci.stg.gnosispay.com"),
+	GNOSIS_PCI_API_URL: z.string().url().default(""),
 });
 
 const parsedEnv = envSchema.safeParse(process.env);
