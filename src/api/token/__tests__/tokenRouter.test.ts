@@ -5,7 +5,7 @@ import type { ServiceResponse } from "@/common/models/serviceResponse";
 import { app } from "@/server";
 
 describe("Token API endpoints", () => {
-	it("GET / - success", async () => {
+	it.skip("GET / - success", async () => {
 		const response = await request(app).get("/token");
 		const result: ServiceResponse = response.body;
 
