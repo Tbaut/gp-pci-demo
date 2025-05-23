@@ -20,10 +20,10 @@ class TokenController {
 			});
 
 			// Make the request using axios with the custom agent
-			console.log(`${env.GNOSIS_PCI_API_URL}/ephemeral-token`);
+			logger.info(`Calling POST ${env.GNOSIS_PSE_API_URL}/ephemeral-token`);
 			const response = await axios({
 				method: "POST",
-				url: `${env.GNOSIS_PCI_API_URL}/ephemeral-token`,
+				url: `${env.GNOSIS_PSE_API_URL}/ephemeral-token`,
 				headers: {
 					"Content-Type": "application/json",
 				},
