@@ -37,6 +37,10 @@ jobs:
     name: Test
     needs: setup
     runs-on: ubuntu-latest
+    env:
+      CLIENT_CERT: "abc"
+      CLIENT_KEY: "abc"
+      GNOSIS_PSE_API_URL: "abc"
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
       - uses: ./.github/actions/setup-pnpm
